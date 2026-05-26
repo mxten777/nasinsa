@@ -1,0 +1,14 @@
+#!/bin/sh
+# pre-commit hook: PROJECT.md / README.md 가 스테이징되면 최종 수정일 자동 갱신
+
+TODAY=$(date +"%Y-%m-%d")
+
+for FILE in "PROJECT.md" "README.md"; do
+  if git diff --cached --name-only | grep -q "^${FILE}$"; then
+    if [ -f "$FILE" ] && grep -q "최종 수정일" "$FILE"; then
+      sed -i "s/최종 수정일: [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}/최종 수정일: ${TODAY}/" "$FILE"
+      git add "$FILE"
+      echo "[$FILE] 최종 수정일 → ${TODAY}"
+    fi
+  fi
+done
