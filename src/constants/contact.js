@@ -1,0 +1,16 @@
+export const COMPANY = {
+  name: '행정사법인 정유',
+  nameEn: 'JEONGU',
+  nameFull: '행정사법인 정유(貞蕤)',
+  slogan: '정직함과 품격으로 해결합니다',
+  phone: '010-4502-8370',
+  email: 'nasinsa@naver.com',
+  address: '경기도 수원시 권선구 서둔로 193, 201호',
+  addressShort: '수원시 권선구 서둔로 193',
+  hours: '평일 09:00 – 18:00',
+  hoursFull: '평일 09:00 – 18:00 (주말·공휴일 휴무)',
+  kakaoUrl: 'https://open.kakao.com/o/placeholder',
+  mapNaverUrl: 'https://map.naver.com/v5/search/%EC%88%98%EC%9B%90%EC%8B%9C%20%EA%B6%8C%EC%84%A0%EA%B5%AC%20%EC%84%9C%EB%91%94%EB%A1%9C%20193',
+  mapKakaoUrl: 'https://map.kakao.com/link/search/수원시 권선구 서둔로 193',
+  mapEmbedUrl: 'https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84+%EC%88%98%EC%9B%90%EC%8B%9C+%EA%B6%8C%EC%84%A0%EA%B5%AC+%EC%84%9C%EB%91%94%EB%A1%9C+193&hl=ko&z=17&output=embed',
+}

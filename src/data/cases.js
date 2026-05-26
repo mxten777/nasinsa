@@ -1,0 +1,58 @@
+export const CASES = [
+  {
+    category: '행정심판',
+    title: '개발행위 불허가 처분 취소',
+    period: '처리기간 45일',
+    result: '처분 취소 100%',
+    resultClass: 'text-green-600',
+    bg: 'bg-green-50',
+    items: [
+      '토지 개발 불허가 처분에 불복',
+      '행정심판 청구 대리',
+      '처분 취소 인용 결정',
+      '후속 인허가 절차 진행',
+    ],
+  },
+  {
+    category: '토지보상',
+    title: '토지 보상금 47% 증액',
+    period: '처리기간 60일',
+    result: '보상금 +47%',
+    resultClass: 'text-blue-600',
+    bg: 'bg-blue-50',
+    items: [
+      '공익사업 편입 토지 보상 협의',
+      '감정평가 이의 신청',
+      '재감정을 통한 증액',
+      '이의재결 신청 대리',
+    ],
+  },
+  {
+    category: '기업 인허가',
+    title: '기업 인허가 원스톱 처리',
+    period: '처리기간 30일',
+    result: '30일 완료',
+    resultClass: 'text-primary-600',
+    bg: 'bg-primary-50',
+    items: [
+      '식품위생업 허가 신청',
+      '관련 법령 검토 및 서류 준비',
+      '기관 협의 및 현장 대응',
+      '허가 완료 및 사후 관리',
+    ],
+  },
+  {
+    category: '행정심판',
+    title: '영업정지 처분 철회 성공',
+    period: '처리기간 35일',
+    result: '처분 취소',
+    resultClass: 'text-gold-700',
+    bg: 'bg-gold-400/10',
+    items: [
+      '영업정지 3개월 처분 불복',
+      '임시처분(집행정지) 신청',
+      '위법·부당성 입증 자료 준비',
+      '행정심판 인용 결정',
+    ],
+  },
+]
