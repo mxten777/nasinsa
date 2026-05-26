@@ -133,40 +133,104 @@ VITE_SUPABASE_ANON_KEY=your-anon-key
 
 ---
 
-## 미구현 항목 및 작업 순서 📋
+## 고도화 로드맵 📋
 
-### Phase 1 — SEO / 기술 완성 (우선순위 높음)
-- [ ] **1-1** `public/sitemap.xml` 생성 (robots.txt에 명시됨)
-- [ ] **1-2** `og:image` 생성 및 index.html 연결 (SNS 공유 시 썸네일)
-- [ ] **1-3** Google Analytics 4 (GA4) 측정 ID 삽입 → `index.html`
+> 난이도: ⭐ 쉬움 / ⭐⭐ 보통 / ⭐⭐⭐ 복잡
+
+---
+
+### Phase 1 — SEO / 기술 완성 `(즉시 가능)`
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 1-1 | `sitemap.xml` 생성 | `robots.txt`에 이미 명시됨. 도메인 확정 후 작성 | ⭐ |
+| 1-2 | `og:image` 생성 | SNS 공유 썸네일 (1200×630px), `index.html` 연결 | ⭐ |
+| 1-3 | GA4 삽입 | `index.html`에 측정 ID 한 줄 추가 | ⭐ |
+| 1-4 | 네이버 서치어드바이저 등록 | 국내 검색 노출 핵심 | ⭐ |
+| 1-5 | Google Search Console 등록 | 구글 검색 노출 모니터링 | ⭐ |
+| 1-6 | `vite-plugin-sitemap` 도입 | 빌드 시 sitemap 자동 생성 | ⭐⭐ |
+
+---
 
 ### Phase 2 — 외부 서비스 연동
-- [ ] **2-1** 카카오채널 실제 URL 연결 (MobileCtaBar + Footer)
-  - 현재: `https://open.kakao.com/o/placeholder`
-  - 필요: 실제 오픈채팅 또는 채널 URL
-- [ ] **2-2** 네이버 블로그 링크 연결 (Footer SNS 영역 추가)
-- [ ] **2-3** 인스타그램 / 유튜브 링크 (있을 경우 Footer에 추가)
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 2-1 | 카카오채널 실제 URL | `src/constants/contact.js`의 `COMPANY.kakaoUrl` 한 곳만 수정 | ⭐ |
+| 2-2 | 네이버 블로그 링크 | Footer SNS 영역 추가 | ⭐ |
+| 2-3 | 채널톡 / 카카오 채팅 위젯 | 우측 하단 실시간 상담 버튼 (스크립트 한 줄 삽입) | ⭐⭐ |
+| 2-4 | 네이버 지도 임베드 교체 | 현재 Google Maps → 네이버 지도 (국내 사용자 친화) | ⭐⭐ |
+
+---
 
 ### Phase 3 — 콘텐츠 강화
-- [ ] **3-1** 팀 실제 사진 적용 (현재: 이니셜 placeholder)
-- [ ] **3-2** 사무실/업무 사진 추가 (히어로 배경 또는 팀 섹션)
-- [ ] **3-3** 실제 성공 사례 내용 업데이트 (현재: 예시 텍스트)
-- [ ] **3-4** 실제 고객 후기 업데이트 (현재: 예시 텍스트)
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 3-1 | 팀 실제 사진 적용 | `src/data/team.js`에 이미지 경로 추가 (현재: 이니셜 placeholder) | ⭐ |
+| 3-2 | 사무실 / 업무 사진 추가 | 히어로 배경 또는 팀 섹션 배경 이미지 | ⭐ |
+| 3-3 | 실제 성공 사례 업데이트 | `src/data/cases.js` 내용 교체 (현재: 예시 텍스트) | ⭐ |
+| 3-4 | 실제 고객 후기 업데이트 | `src/data/testimonials.js` 내용 교체 (현재: 예시 텍스트) | ⭐ |
+| 3-5 | 업무 분야 상세 페이지 | 서비스 카드 클릭 시 `/services/:slug` 라우트로 이동 | ⭐⭐⭐ |
+
+---
 
 ### Phase 4 — 관리자 기능
-- [ ] **4-1** 상담 문의 목록 관리 페이지 (`/admin`)
-  - Supabase contacts 테이블 조회
-  - 상태 변경 (신규 → 상담중 → 완료)
-  - 관리자 메모(admin_note) 입력
-- [ ] **4-2** 관리자 로그인 (Supabase Auth)
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 4-1 | 관리자 로그인 | Supabase Auth (이메일/비밀번호) | ⭐⭐ |
+| 4-2 | 상담 문의 목록 페이지 (`/admin`) | contacts 테이블 조회, 상태 변경 (신규→상담중→완료) | ⭐⭐ |
+| 4-3 | 관리자 메모 입력 | `admin_note` 컬럼 활용 (DB 스키마 이미 준비됨) | ⭐⭐ |
+| 4-4 | 신규 문의 알림 | Supabase Realtime → 브라우저 알림 또는 이메일 발송 | ⭐⭐⭐ |
+| 4-5 | 관리자 대시보드 통계 | 월별 문의 수 차트 (Recharts 등) | ⭐⭐⭐ |
+
+---
 
 ### Phase 5 — 배포
-- [x] **5-0** `vercel.json` + `public/_redirects` SPA 폴백 설정 완료
-- [ ] **5-1** 도메인 연결 결정 (Vercel / Netlify / 직접 서버)
-- [ ] **5-2** `.env` Supabase 실제 키 설정
-- [ ] **5-3** `sitemap.xml` 도메인 URL 업데이트
-- [ ] **5-4** Google Search Console 등록
-- [ ] **5-5** 네이버 서치어드바이저 등록
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 5-0 | SPA 폴백 설정 | ✅ `vercel.json` + `public/_redirects` 완료 | — |
+| 5-1 | 도메인 연결 | Vercel / Netlify / 직접 서버 결정 후 연결 | ⭐ |
+| 5-2 | Supabase 실제 키 설정 | `.env` 파일에 프로덕션 키 입력 | ⭐ |
+| 5-3 | `sitemap.xml` URL 업데이트 | 도메인 확정 후 절대 경로로 수정 | ⭐ |
+
+---
+
+### Phase 6 — 사용자 경험 개선
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 6-1 | 폼 제출 후 이메일 알림 | Supabase Edge Function + Resend/SendGrid | ⭐⭐⭐ |
+| 6-2 | 상담 예약 시스템 | 날짜/시간 선택 캘린더 UI + Supabase 저장 | ⭐⭐⭐ |
+| 6-3 | 토스트 알림 | 폼 제출 성공/실패 피드백 개선 (react-hot-toast 등) | ⭐⭐ |
+| 6-4 | 이미지 스켈레톤 | 이미지 로드 전 placeholder 표시 | ⭐⭐ |
+| 6-5 | 접근성(A11y) 강화 | aria-label 전수 점검, 키보드 네비게이션 보완 | ⭐⭐ |
+
+---
+
+### Phase 7 — 성능 최적화
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 7-1 | `hero.png` 경로 최적화 | `src/assets/` → `public/`으로 이동 (번들 제외) | ⭐ |
+| 7-2 | 이미지 WebP 변환 + lazy load | `vite-imagetools` + `<img loading="lazy">` | ⭐⭐ |
+| 7-3 | `vite-plugin-compression` | gzip/brotli 압축 번들 자동 생성 | ⭐ |
+| 7-4 | Core Web Vitals 개선 | LCP / CLS / INP 측정 후 병목 제거 | ⭐⭐⭐ |
+
+---
+
+### Phase 8 — 기술 부채 / 장기 개선
+
+| # | 항목 | 내용 | 난이도 |
+|---|------|------|--------|
+| 8-1 | 환경별 config 분리 | `.env.development` / `.env.production` 분리 | ⭐ |
+| 8-2 | ESLint 룰 강화 | `react-hooks`, `jsx-a11y` 플러그인 추가 | ⭐⭐ |
+| 8-3 | CI/CD 파이프라인 | GitHub Actions → Vercel 자동 배포 | ⭐⭐ |
+| 8-4 | TypeScript 마이그레이션 | `.jsx` → `.tsx`, 데이터/props 타입 정의 | ⭐⭐⭐ |
+| 8-5 | 컴포넌트 테스트 | Vitest + React Testing Library | ⭐⭐⭐ |
+| 8-6 | E2E 테스트 | Playwright (폼 제출 플로우 자동화) | ⭐⭐⭐ |
 
 ---
 
