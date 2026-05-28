@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ChevronRight, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, ChevronRight, Clock, MessageCircle } from 'lucide-react'
 import { COMPANY } from '../../constants/contact'
 
 const QUICK_LINKS = [
@@ -12,10 +12,11 @@ const QUICK_LINKS = [
 const SERVICE_NAMES = ['기업컨설팅', '개발행위 인허가', '토지보상', '고충민원', '행정심판']
 
 const CONTACT_INFO = [
-  { icon: Phone,  label: '대표 전화', value: COMPANY.phone,   href: `tel:${COMPANY.phone}`         },
-  { icon: Mail,   label: '이메일',   value: COMPANY.email,   href: `mailto:${COMPANY.email}`       },
-  { icon: MapPin, label: '주소',     value: COMPANY.address                                        },
-  { icon: Clock,  label: '운영시간', value: COMPANY.hours                                          },
+  { icon: Phone,         label: '대표 전화',    value: COMPANY.phone,     href: `tel:${COMPANY.phone}`         },
+  { icon: MessageCircle, label: '카카오톡 상담', value: '카카오톡 채널',   href: COMPANY.kakaoUrl               },
+  { icon: Mail,          label: '이메일',      value: COMPANY.email,     href: `mailto:${COMPANY.email}`       },
+  { icon: MapPin,        label: '주소',        value: COMPANY.address                                           },
+  { icon: Clock,         label: '운영시간',    value: COMPANY.hours                                             },
 ]
 
 export default function Footer() {
