@@ -93,7 +93,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-sm">© {new Date().getFullYear()} {COMPANY.nameFull}. All rights reserved.</p>
-          <a href="#contact" className="text-xs text-white/40 hover:text-gold-400 transition-colors">개인정보처리방침</a>
+          <a href="/privacy" className="text-xs text-white/40 hover:text-gold-400 transition-colors">개인정보처리방침</a>
         </div>
       </div>
       <div className="h-16 lg:h-0" />
