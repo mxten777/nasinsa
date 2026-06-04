@@ -4,5 +4,6 @@ export const NAV_ITEMS = [
   { label: '진행절차', href: '#process' },
   { label: '성공사례', href: '#cases' },
   { label: '고객후기', href: '#testimonials' },
+  { label: 'SNS', href: '#sns' },
   { label: '오시는 길', href: '#location' },
 ]

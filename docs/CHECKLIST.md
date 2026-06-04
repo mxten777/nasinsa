@@ -14,6 +14,20 @@
 - **작업**: 실제 오픈채팅 또는 카카오채널 URL로 1줄 교체
 - [ ] 완료
 
+### 1-A. SNS 채널 URL 교체 (SnsHubSection 연동)
+- **파일**: `src/constants/contact.js`
+- **현황**: 5개 SNS URL 모두 `placeholder` — 버튼 클릭 시 오류 또는 404
+- **작업**: 각 URL을 실제 채널 주소로 교체
+  ```js
+  instagramUrl: 'https://www.instagram.com/실제계정'
+  youtubeUrl:   'https://www.youtube.com/@실제채널'
+  naverBlogUrl: 'https://blog.naver.com/실제블로그'
+  threadsUrl:   'https://www.threads.net/@실제계정'
+  naverTalkUrl: 'https://talk.naver.com/실제톡톡ID'
+  ```
+- 미개설 채널은 해당 `href`를 `#contact`로 임시 대체하거나 버튼 숨김 처리 권장
+- [ ] 완료
+
 ### 2. Supabase 프로덕션 키 설정
 - **파일**: 프로젝트 루트 `.env` (현재 미생성)
 - **현황**: 키 미설정 시 상담 폼 제출 전혀 안 됨
@@ -111,6 +125,11 @@
 | # | 필요 자료 | 용도 |
 |---|-----------|------|
 | A | 카카오 오픈채팅 또는 채널 URL | 전 사이트 카카오 상담 버튼 |
+| A-1 | 인스타그램 계정 URL | SNS Hub 섹션 |
+| A-2 | 유튜브 채널 URL | SNS Hub 섹션 |
+| A-3 | 네이버 블로그 URL | SNS Hub 섹션 |
+| A-4 | 스레드(Threads) 계정 URL | SNS Hub 섹션 |
+| A-5 | 네이버 톡톡 채널 URL | SNS Hub 섹션 |
 | B | 대표·직원 증명사진 (JPG/PNG) | 팀 소개 섹션 |
 | C | 실제 누적 처리 건수 / 고객 만족률 / 기업 고객 수 / 해결률 | 신뢰 지표 섹션 수치 |
 | D | 실제 성공 사례 4건 (카테고리·제목·결과·세부 항목) | 성공 사례 섹션 |

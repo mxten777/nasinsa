@@ -8,6 +8,7 @@ import TeamSection from '../components/sections/TeamSection'
 import ProcessSection from '../components/sections/ProcessSection'
 import CasesSection from '../components/sections/CasesSection'
 import TestimonialsSection from '../components/sections/TestimonialsSection'
+import SnsHubSection from '../components/sections/SnsHubSection'
 import ContactSection from '../components/sections/ContactSection'
 import MapSection from '../components/sections/MapSection'
 
@@ -23,6 +24,7 @@ export default function LandingPage() {
         <ProcessSection />
         <CasesSection />
         <TestimonialsSection />
+        <SnsHubSection />
         <ContactSection />
         <MapSection />
       </main>
